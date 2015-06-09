@@ -1,0 +1,39 @@
+<div class="container">
+  <h3>Hi! Needs to shortcut your URL? This is the place!</h3>
+</div>
+
+<br /><br />
+
+<% if user_signed_in? %>
+    <%= link_to 'Create your shortcut!', new_shortcut_path, class: 'btn btn-primary' %>
+<% end %>
+
+<br /><br />
+
+<% if user_signed_in? %>
+<h3>Your lasts shortcuts</h3>
+    <% if @lasts_shortcuts.present? && @lasts_shortcuts.count > 0 %>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Short URL</th>
+            <th>Full URL</th>
+            <th>Created at</th>
+            <th>Hits</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @lasts_shortcuts.each do |shortcut| %>
+          <tr>
+            <td><%= link_to shortcut.short_url, shortcut.short_url, target: '_blank' %></td>
+            <td><%= link_to shortcut.full_url, shortcut.full_url, target: '_blank' %></td>
+            <td><%= shortcut.created_at.strftime('%Y-%m-%d %H:%M:%S') if shortcut.created_at.present? %></td>
+            <td><%= shortcut.hits %></td>
+          </tr>
+          <% end %>
+          </tbody>
+        </table>
+    <% else %>
+        <p>No shortcuts at this moment :(</p>
+    <% end %>
+<% end %>

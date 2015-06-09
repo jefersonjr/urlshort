@@ -1,0 +1,15 @@
+<h2>Shortcut your url</h2>
+<%= form_for(@shortcut) do |f| %>
+    <% if @shortcut.errors.any? %>
+        <div class="alert alert-warning" role="alert">
+          <strong>Warning!</strong>
+          <% @shortcut.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+        </div>
+    <% end %>
+    <div class="form-group">
+      <%= f.text_field :full_url, class: 'form-control', placeholder: 'Enter full URL' %>
+    </div>
+    <%= f.submit class: 'btn btn-default', value: 'Shortcut!' %>
+<% end %>

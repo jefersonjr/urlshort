@@ -1,0 +1,3 @@
+<h2>Your shortcut detail</h2>
+Full URL: <b><%= @shortcut.full_url %></b> <br />
+Short URL: <b><%= @shortcut.short_url %> (<%= link_to 'Visit my shortcut URL', redirect_shortcut_path(@shortcut), target: '_blank' %>)</b>

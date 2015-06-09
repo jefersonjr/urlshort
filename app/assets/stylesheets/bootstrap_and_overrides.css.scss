@@ -1,0 +1,21 @@
+@import "bootstrap";
+
+.bs-docs-nav {
+  background-image:linear-gradient(to bottom,#563d7c 0,#6f5499 100%) !important;
+}
+
+a.navbar-brand {
+  color: #fff !important;
+}
+
+ul.nav li a {
+  color: #fff !important;
+}
+
+ul.nav li a:hover {
+  color: #000 !important;
+}
+
+ul.dropdown-menu a {
+  color: #000 !important;
+}
