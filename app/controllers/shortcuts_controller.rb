@@ -1,5 +1,6 @@
 class ShortcutsController < ApplicationController
   before_action :set_shortcut, only: [:show, :destroy, :redirect]
+  before_filter :authenticate_user!
 
   respond_to :html
 
